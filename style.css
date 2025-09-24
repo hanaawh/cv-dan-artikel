@@ -1,0 +1,182 @@
+/* --- FONT & BODY STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- ANIMATED GRADIENT BACKGROUND --- */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb, #a1c4fd, #e4e8fb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+}
+
+nav {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-end; /* Align nav to the right */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #003973;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: rgba(0, 57, 115, 0.7);
+    color: #fff;
+}
+
+nav ul li a.active {
+    background-color: #003973;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* --- HAMBURGER MENU --- */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #003973;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- MAIN CONTENT --- */
+.container {
+    max-width: 1000px;
+    margin: 2.5rem auto;
+    padding: 0 20px;
+}
+
+.page-section {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* ... (rest of the page-section, profile, timeline, etc. styles remain the same) ... */
+.page-section h1, .page-section h2 { color: #003973; border-bottom: 2px solid rgba(0, 57, 115, 0.1); padding-bottom: 15px; margin-top: 0; }
+.profile { display: flex; align-items: center; gap: 2.5rem; }
+.profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.profile p { color: #333; font-size: 1.1rem; }
+.timeline { list-style: none; padding: 0; position: relative; }
+.timeline::before { content: ''; position: absolute; top: 0; left: 8px; height: 100%; width: 3px; background: rgba(0, 57, 115, 0.2); border-radius: 2px; }
+.timeline li { margin-bottom: 2rem; padding-left: 2.5rem; position: relative; }
+.timeline li::before { content: ''; position: absolute; left: 0; top: 5px; width: 18px; height: 18px; border-radius: 50%; background-color: #005f9e; border: 3px solid #fff; }
+.timeline h3 { margin: 0 0 5px 0; color: #003973; font-size: 1.4rem; }
+.timeline p { margin: 0; color: #555; }
+.skills-container, .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.skill-category, .project-card { background: rgba(255, 255, 255, 0.5); padding: 1.5rem; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2); transition: background-color 0.3s; }
+.skill-category:hover, .project-card:hover { background: rgba(255, 255, 255, 0.7); }
+.skill-category h2 { border-bottom: none; padding-bottom: 0; margin-bottom: 1rem; font-size: 1.3rem; }
+.skill-category ul { list-style: none; padding: 0; }
+.skill-category li { background-color: rgba(0, 57, 115, 0.05); padding: 12px; margin-bottom: 8px; border-radius: 5px; font-weight: 500; color: #333; }
+.project-card h3 { margin-top: 0; }
+.project-card a { color: #005f9e; text-decoration: none; font-weight: bold; }
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 2rem 0; color: #003973; font-weight: 500; }
+.contact-info a { color: #003973; text-decoration: none; margin: 0 10px; font-weight: bold; }
+.contact-info a:hover { text-decoration: underline; }
+
+/* --- RESPONSIVE DESIGN & SIDEBAR --- */
+@media (max-width: 768px) {
+    nav ul {
+        position: fixed;
+        right: 0;
+        top: 70px; /* Position below header */
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        height: calc(100vh - 70px);
+        width: 60%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
+    }
+
+    nav ul.nav-active {
+        transform: translateX(0%);
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Hamburger Animation */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
