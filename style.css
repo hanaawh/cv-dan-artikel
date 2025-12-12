@@ -17,7 +17,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(45deg, #a1c4fd, #c2e9fb, #a1c4fd, #e4e8fb);
+    background: linear-gradient(45deg, #003fa3, #000000, #5475a8, #e4e8fb);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
 }
