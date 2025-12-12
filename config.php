@@ -3,7 +3,7 @@
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root'); // Default username untuk XAMPP
 define('DB_PASSWORD', ''); // Default password untuk XAMPP adalah kosong
-define('DB_NAME', 'dbcv');
+define('DB_NAME', 'PSAS2025');
 
 // Membuat koneksi ke database
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
